@@ -47,7 +47,11 @@ function runHint() {
                 if (isCorrect) {
                     if (!label.querySelector('.lms-hint-dot')) {
                         // Thêm dấu [.] màu đỏ
-                        label.innerHTML += '<span class="lms-hint-dot"> .</span>';
+                        // Cắt sạch thẻ <br>, khoảng trắng, hoặc &nbsp; vô hình ở cuối câu
+let cleanHTML = label.innerHTML.replace(/(<br\s*\/?>|\s|&nbsp;)+$/gi, '');
+
+// Gắn dấu chấm và ép không cho xuống dòng bằng white-space: nowrap
+label.innerHTML = cleanHTML + '<span class="lms-hint-dot" style="white-space: nowrap;"> .</span>';
                     }
                 }
             }
