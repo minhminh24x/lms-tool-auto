@@ -47,7 +47,7 @@ function runHint() {
                 if (isCorrect) {
                     if (!label.querySelector('.lms-hint-dot')) {
                         // Thêm dấu [.] màu đỏ
-                        label.innerHTML += ' <span class="lms-hint-dot" style="color: #ff4d4f; font-weight: bold; margin-left: 5px;">[.]</span>';
+                        label.innerHTML += '<span class="lms-hint-dot"> .</span>';
                     }
                 }
             }
